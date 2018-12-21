@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cheatsheet.SmokingCheatSheet">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/cs_gl_v10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="41dp"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/cs_gl_v90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:padding="10dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:id="@+id/cs_meat_group"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checkedButton="@+id/cs_beef"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/cs_beef"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Beef"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/cs_pork"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Pork"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/cs_poultry"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Poultry"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/cs_lamb"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Lamb"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/cs_venison"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Venison"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/cs_seafood"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Seafood"
+                android:textAlignment="center"/>
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <View
+        android:id="@+id/seperator1"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/cs_gl_v90"
+        app:layout_constraintStart_toStartOf="@+id/cs_gl_v10"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"/>
+
+    <View
+        android:id="@+id/seperator2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/cs_gl_v90"
+        app:layout_constraintStart_toStartOf="@+id/cs_gl_v10"
+        app:layout_constraintTop_toBottomOf="@+id/cs_description"/>
+
+    <View
+        android:id="@+id/seperator3"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/cs_gl_v90"
+        app:layout_constraintStart_toStartOf="@+id/cs_gl_v10"
+        app:layout_constraintTop_toBottomOf="@+id/cs_preparation"/>
+
+    <View
+        android:id="@+id/seperator4"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/cs_gl_v90"
+        app:layout_constraintStart_toStartOf="@+id/cs_gl_v10"
+        app:layout_constraintTop_toBottomOf="@+id/cs_fuel_group"/>
+
+
+    <TextView
+        android:id="@+id/cs_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"/>
+
+    <TextView
+        android:id="@+id/cs_preparation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"/>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Preparation"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seperator2"/>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Description"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seperator1"/>
+
+    <RadioGroup
+        android:id="@+id/cs_fuel_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:checkedButton="@+id/cs_briquettes"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seperator3">
+
+        <RadioButton
+            android:id="@+id/cs_briquettes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:padding="10dp"
+            android:text="Briquettes"
+            android:textAlignment="center"/>
+
+        <RadioButton
+            android:id="@+id/cs_charcoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:padding="10dp"
+            android:text="Lump Charcoal"
+            android:textAlignment="center"/>
+
+        <RadioButton
+            android:id="@+id/cs_wood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:padding="10dp"
+            android:text="Wood"
+            android:textAlignment="center"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/cs_fuel_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seperator4"
+        tools:text="TextView"/>
+
+    <ScrollView
+        android:id="@+id/cs_wood_chart_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cs_chart_buttons_group">
+
+
+        <TableLayout
+            android:id="@+id/cs_chart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:paddingBottom="5dp"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="8dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".2"
+                    android:text="Type"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".2"
+                    android:text="Strength"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="Taste"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".1"
+                    android:text="Meat"
+                    android:textSize="12sp"/>
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+    <android.support.constraint.Group
+        android:id="@+id/cs_wood_fuel_grp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="cs_wood_chart_container,cs_chart_buttons_group"/>
+
+    <RadioGroup
+        android:id="@+id/cs_chart_buttons_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:checkedButton="@+id/cs_expand_wood_chart"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seperator4">
+
+        <RadioButton
+            android:id="@+id/cs_expand_wood_chart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:padding="10dp"
+            android:text="Wood Chart"
+            android:textAlignment="center"/>
+
+        <RadioButton
+            android:id="@+id/cs_expand_smoking_chart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_button_background"
+            android:button="@android:color/transparent"
+            android:padding="10dp"
+            android:text="Smoking Times"
+            android:textAlignment="center"/>
+    </RadioGroup>
+
+</android.support.constraint.ConstraintLayout>

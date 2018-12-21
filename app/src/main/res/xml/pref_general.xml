@@ -1,0 +1,67 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory
+        android:title="Global Settings">
+        <!--<SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_reconnect"
+            android:title="Reconnect to last known IQ130"/>-->
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_sound"
+            android:title="@string/sound_label"/>
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_haptic_feedback"
+            android:title="@string/haptic_feedback_label"/>
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/temp_units_entries"
+            android:entryValues="@array/temp_units_values"
+            android:key="pref_temp_units"
+            android:title="@string/temp_units_label"/>
+        <EditTextPreference
+            android:defaultValue="0000"
+            android:inputType="number"
+            android:key="pref_passcode"
+            android:maxLength="4"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="@string/passcode_summary"
+            android:title="@string/passcode_label"/>
+        <CheckBoxPreference
+            android:key="acra.enable"
+            android:title="@string/pref_enable_acra"
+            android:summaryOn="@string/pref_acra_enabled"
+            android:summaryOff="@string/pref_acra_disabled"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+
+
+
+    <PreferenceCategory
+        android:title="Unit Names">
+
+        <EditTextPreference
+            android:key="pref_display_name"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/display_name_label"/>
+        <EditTextPreference
+            android:defaultValue="Food 1"
+            android:key="pref_probe2_name"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Food 1"
+            android:title="Food 1 Probe Name" />
+        <EditTextPreference
+            android:defaultValue="Food 2"
+            android:key="pref_probe3_name"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Food 2"
+            android:title="@string/food2_probe_name_label"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

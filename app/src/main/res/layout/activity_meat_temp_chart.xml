@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tempchart.TempChartActivity">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:padding="10dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:id="@+id/mt_meat_group"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checkedButton="@+id/mt_beef"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mt_beef"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Beef"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/mt_pork"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Pork"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/mt_poultry"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Poultry"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/mt_lamb"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Lamb"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/mt_venison"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Venison"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/mt_seafood"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:padding="10dp"
+                android:text="Seafood"
+                android:textAlignment="center"/>
+        </RadioGroup>
+
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:padding="10dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView1">
+
+        <RadioGroup
+            android:id="@+id/mt_doneness_group"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:checkedButton="@+id/mt_med_rare"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mt_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:minWidth="75dp"
+                android:padding="10dp"
+                android:text="Bleu"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/mt_rare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:minWidth="75dp"
+                android:padding="10dp"
+                android:text="Rare"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/mt_med_rare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:minWidth="75dp"
+                android:padding="10dp"
+                android:text="Med Rare"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/mt_med"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:minWidth="75dp"
+                android:padding="10dp"
+                android:text="Medium"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/mt_med_well"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:minWidth="75dp"
+                android:padding="10dp"
+                android:text="Med Well"
+                android:textAlignment="center"/>
+
+            <RadioButton
+                android:id="@+id/mt_well"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_button_background"
+                android:button="@android:color/transparent"
+                android:checked="false"
+                android:minWidth="75dp"
+                android:padding="10dp"
+                android:text="Well"
+                android:textAlignment="center"/>
+
+        </RadioGroup>
+
+    </HorizontalScrollView>
+
+    <ProgressBar
+        android:id="@+id/mt_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:foreground="@drawable/thermo_body"
+        android:max="165"
+        android:progress="130"
+        android:progressDrawable="@drawable/vertical_progress_bar"
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="@+id/imageView10"
+        app:layout_constraintStart_toStartOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11"/>
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/mt_hgl_70"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/thermo_bottom"/>
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView10"
+        app:layout_constraintStart_toStartOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"
+        app:srcCompat="@drawable/thermo_top"/>
+
+    <TextView
+        android:id="@+id/mt_tempf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="232dp"
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintStart_toEndOf="@+id/mt_progress"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/mt_tempc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintEnd_toStartOf="@+id/mt_progress"
+        app:layout_constraintTop_toTopOf="@+id/mt_tempf"/>
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="°C"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintEnd_toStartOf="@+id/imageView11"/>
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="°F"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+        app:layout_constraintStart_toEndOf="@+id/imageView11"/>
+
+    <TextView
+        android:id="@+id/mt_temp_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mt_hgl_70"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/mt_hgl_70"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".7"/>
+
+</android.support.constraint.ConstraintLayout>

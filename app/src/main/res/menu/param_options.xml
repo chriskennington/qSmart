@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/param_pit_set"
+        android:title="@string/param_pit_set"/>
+    <item
+        android:id="@+id/param_pit_alarm"
+        android:title="@string/param_pit_alarm"/>
+    <item
+        android:id="@+id/param_delay_pit_set"
+        android:title="@string/param_delay_pit_set"/>
+    <item
+        android:id="@+id/param_delay_time"
+        android:title="@string/param_delay_time"/>
+    <item
+        android:id="@+id/param_probe2_alarm"
+        android:title="@string/param_food1_alarm"/>
+    <item
+        android:id="@+id/param_probe2_pit_set"
+        android:title="@string/param_food1_pit_set"/>
+    <item
+        android:id="@+id/param_probe2_target"
+        android:title="@string/param_food1_target"/>
+    <item
+        android:id="@+id/param_probe3_alarm"
+        android:title="@string/param_food2_alarm"/>
+    <item
+        android:id="@+id/param_probe3_pit_set"
+        android:title="@string/param_food2_pit_set"/>
+    <item
+        android:id="@+id/param_probe3_target"
+        android:title="@string/param_food2_target"/>
+</menu>
