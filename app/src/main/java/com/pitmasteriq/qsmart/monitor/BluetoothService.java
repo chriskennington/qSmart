@@ -191,10 +191,18 @@ public class BluetoothService extends Service implements BluetoothCallbackInterf
                 {
                     if(lastUpdate > 0 && ((System.currentTimeMillis() - lastUpdate) > DATA_UPDATE_TIMEOUT))
                     {
-                        //TODO force a read
-                        forceRead = true;
-                        BluetoothGattCharacteristic c = connectionHandle.getService(SERVICE).getCharacteristic(STATUS_BASIC);
-                        connectionHandle.readCharacteristic(c);
+                        //force a read
+                        try
+                        {
+                            forceRead = true;
+                            BluetoothGattCharacteristic c = connectionHandle.getService(SERVICE).getCharacteristic(STATUS_BASIC);
+                            connectionHandle.readCharacteristic(c);
+                        }
+                        catch(NullPointerException e)
+                        {
+                            e.printStackTrace();
+                            Log.e(LogTag.DEBUG, "Failed to force a read. Null connection handle.");
+                        }
                     }
                 }
 

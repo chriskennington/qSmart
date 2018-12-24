@@ -80,7 +80,7 @@ public class Device
     }
 
     public void setPasscode(short code) { this.passcode = code; }
-    public void setPasscode(String code) { this.passcode = Short.parseShort(code); Log.e("debug", "set passcode to " + passcode);}
+    public void setPasscode(String code) { this.passcode = Short.parseShort(code);}
 
     public short getPasscode() { return passcode; }
     public String getPasscodeString() { return String.format(Locale.getDefault(),"%07d", passcode); }

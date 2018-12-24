@@ -78,16 +78,28 @@ public class IntegerParamEditor extends DialogFragment
             @Override
             public void onClick(View v)
             {
-                int value = Integer.valueOf(edtValue.getText().toString());
-
-                if(value >= min && value <= max || value == 0)
+                if(edtValue.getText().toString().length() > 0)
                 {
-                    listener.onEdited(selector, Integer.valueOf(edtValue.getText().toString()));
-                    getDialog().dismiss();
+                    try
+                    {
+                        int value = Integer.valueOf(edtValue.getText().toString());
+
+                        if (value >= min && value <= max || value == 0) {
+                            listener.onEdited(selector, Integer.valueOf(edtValue.getText().toString()));
+                            getDialog().dismiss();
+                        } else {
+                            edtValue.setError("Value is out of range.");
+                        }
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        e.printStackTrace();
+                        edtValue.setError("Value is out of range.");
+                    }
                 }
                 else
                 {
-                    edtValue.setError("Value is out of range.");
+                    getDialog().dismiss();
                 }
             }
         });

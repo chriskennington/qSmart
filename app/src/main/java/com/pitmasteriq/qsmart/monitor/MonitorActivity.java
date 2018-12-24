@@ -27,6 +27,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -859,26 +860,40 @@ public class MonitorActivity extends AppCompatActivity implements ScanningFragme
             AlertDialog.Builder builder = new AlertDialog.Builder(MonitorActivity.this);
             builder.setTitle("Passcode");
             builder.setMessage("Enter a 4 digit number.");
+            builder.setPositiveButton("Ok", null);
             builder.setView(input);
 
-            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener()
-            {
-                @Override
-                public void onClick(DialogInterface dialog, int which)
-                {
-                    if(input.getText().toString().length() != 4)
-                        input.setError("The passcode must be 4 digits");
 
-                    if(input.getText().toString().equals("0000"))
-                        input.setError("0000 is not allowed. Choose a different number.");
-
-                    deviceManager.device().setPasscode(input.getText().toString());
-                    prefs.edit().putString(Preferences.PASSCODE, input.getText().toString()).apply();
-                    service.passcodeEntered();
-                }
+            /*
+            setting a custom onShowListener prevents the dialog from closing automatically on
+            positive or negative button press. Give more control over when to close the dialog
+             */
+            final AlertDialog aDialog = builder.create();
+            aDialog.setOnShowListener((DialogInterface dialog) -> {
+                    Button b = aDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                    b.setOnClickListener((View v) -> {
+                            Log.e(LogTag.DEBUG, "****************************");
+                            Log.e(LogTag.DEBUG, input.getText().toString());
+                            Log.e(LogTag.DEBUG, input.getText().toString().length() + "");
+                            Log.e(LogTag.DEBUG, "****************************");
+                            if(input.getText().toString().length() != 4) {
+                                Log.e(LogTag.DEBUG, "input is more or less than 4");
+                                input.setError("The passcode must be 4 digits");
+                            }
+                            else if(input.getText().toString().equals("0000")) {
+                                Log.e(LogTag.DEBUG, "input == 0");
+                                input.setError("0000 is not allowed. Choose a different number.");
+                            }
+                            else
+                            {
+                                deviceManager.device().setPasscode(input.getText().toString());
+                                prefs.edit().putString(Preferences.PASSCODE, input.getText().toString()).apply();
+                                service.passcodeEntered();
+                                aDialog.dismiss();
+                            }
+                    });
             });
-
-            builder.show();
+            aDialog.show();
         }
     };
 
