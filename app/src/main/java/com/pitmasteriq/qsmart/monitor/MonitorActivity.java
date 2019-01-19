@@ -1044,10 +1044,19 @@ public class MonitorActivity extends AppCompatActivity implements ScanningFragme
         {
             if(prefs.getBoolean(Preferences.UNIT_CONNECTED, false))
             {
-                if(currentData != null) {
+                if(currentData != null)
+                {
                     int[] data = ConfigBuilder.getSelectedConfigValues(1, currentData);
-                    IntegerParamEditor frag = IntegerParamEditor.newInstance(1, data[0], data[1], data[2]);
-                    frag.show(getSupportFragmentManager(), "param");
+                    if(prefs.getString(Preferences.TEMPERATURE_UNITS, "0").equals("0"))
+                    {
+                        IntegerParamEditor frag = IntegerParamEditor.newInstance(1, data[0], data[1], data[2]);
+                        frag.show(getSupportFragmentManager(), "param");
+                    }
+                    else
+                    {
+                        IntegerParamEditor frag = IntegerParamEditor.newInstance(1, data[0], data[3], data[4]);
+                        frag.show(getSupportFragmentManager(), "param");
+                    }
                 }
             }
         }
