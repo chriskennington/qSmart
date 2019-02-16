@@ -32,15 +32,10 @@ public class AlarmReceiver extends AppCompatActivity
         setContentView(R.layout.activity_alarm_receiver);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-
-
         ConstraintLayout container = findViewById(R.id.alarm_container);
 
         PowerManager pm = (PowerManager)getSystemService(Context.POWER_SERVICE);
         wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "alarmReceiver");
-
-        //wl.acquire(5000);
-
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
         window.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
@@ -72,10 +67,19 @@ public class AlarmReceiver extends AppCompatActivity
     {
         super.onStop();
 
-        if(wl.isHeld())
-            wl.release();
+        try {
+            if(wl.isHeld())
+                wl.release();
+        } catch (NullPointerException e1) {
+            e1.printStackTrace();
+        }
 
-        if(mp.isPlaying())
-            mp.stop();
+
+        try {
+            if (mp.isPlaying())
+                mp.stop();
+        } catch (NullPointerException e2) {
+            e2.printStackTrace();
+        }
     }
 }

@@ -673,7 +673,7 @@ public class MonitorActivity extends AppCompatActivity implements ScanningFragme
                 txtDelayTime.setText(String.format("%02d:%02d", 0, 0));
             }
 
-            txtDelayPitSet.setText(currentData.getDelayPitSet());
+            txtDelayPitSet.setText(String.valueOf(currentData.getDelayPitSet()));
             delayGroup.setVisibility(View.VISIBLE);
         }
         else

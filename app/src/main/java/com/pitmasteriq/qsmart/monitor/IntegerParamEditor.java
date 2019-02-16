@@ -93,7 +93,6 @@ public class IntegerParamEditor extends DialogFragment
                     }
                     catch (NumberFormatException e)
                     {
-                        e.printStackTrace();
                         edtValue.setError("Value is out of range.");
                     }
                 }

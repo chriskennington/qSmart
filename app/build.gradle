@@ -6,8 +6,8 @@ android {
         applicationId "com.pitmasteriq.qsmart"
         minSdkVersion 23
         targetSdkVersion 27
-        versionCode 26
-        versionName "2.2.7"
+        versionCode 27
+        versionName "2.2.8"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
