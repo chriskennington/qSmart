@@ -296,6 +296,18 @@ public class DatabaseHelper extends SQLiteOpenHelper
     }
 
 
+    public void clearGraphData()
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        db.beginTransaction();
+
+        db.execSQL("DELETE FROM " + DatabaseContract.Data.TABLE_NAME);
+
+        db.setTransactionSuccessful();
+        db.endTransaction();
+    }
+
+
     private boolean unitExists(SQLiteDatabase db, String address)
     {
         Cursor c = db.rawQuery("SELECT * FROM " + DatabaseContract.Units.TABLE_NAME + " WHERE "

@@ -707,7 +707,7 @@ public class MonitorActivity extends AppCompatActivity implements ScanningFragme
         View view = inflater.inflate(R.layout.popup_graph_options, null);
 
         final CheckBox graphOptionPitSet, graphOptionProbe1, graphOptionProbe2, graphOptionProbe3;
-        TextView graphOptionExport;
+        TextView graphOptionExport, graphOptionClear;
 
 
         graphOptionPitSet = view.findViewById(R.id.pref_graph_pit_set);
@@ -715,6 +715,7 @@ public class MonitorActivity extends AppCompatActivity implements ScanningFragme
         graphOptionProbe2 = view.findViewById(R.id.pref_graph_probe2);
         graphOptionProbe3 = view.findViewById(R.id.pref_graph_probe3);
         graphOptionExport= view.findViewById(R.id.pref_graph_export);
+        graphOptionClear= view.findViewById(R.id.pref_graph_clear);
 
 
 
@@ -723,14 +724,31 @@ public class MonitorActivity extends AppCompatActivity implements ScanningFragme
         graphOptionProbe2.setChecked(prefs.getBoolean(Preferences.GRAPH_PROBE2, false));
         graphOptionProbe3.setChecked(prefs.getBoolean(Preferences.GRAPH_PROBE3, false));
 
-        graphOptionExport.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
+        graphOptionExport.setOnClickListener((View v1) -> {
                 startActivity(new Intent(MonitorActivity.this, ExportActivity.class));
-            }
-        });
+            });
+
+        graphOptionClear.setOnClickListener((View v2) -> {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Are you sure?");
+                builder.setMessage("This will delete any graph data present. Consider exporting the data first.");
+                builder.setNegativeButton("Cancel", (DialogInterface dialog, int which) -> {
+                    dialog.dismiss();
+                });
+
+                builder.setPositiveButton("Yes", (DialogInterface dialog, int which) -> {
+                    dbHelper.clearGraphData();
+                    Snackbar.make(findViewById(R.id.mon_snackbar_parent), "Graph Data Cleared", Snackbar.LENGTH_SHORT).show();
+                    psDataSet.clear();
+                    p1DataSet.clear();
+                    p2DataSet.clear();
+                    p3DataSet.clear();
+                    updateGraph();
+                    dialog.dismiss();
+                });
+
+                builder.show();
+            });
 
 
         PopupWindow popup = new PopupWindow(this);
